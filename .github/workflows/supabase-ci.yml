@@ -1,0 +1,28 @@
+
+name: Supabase CI
+on: [push]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      
+      - name: Install Supabase CLI
+        run: npm install -g supabase
+      
+      - name: Deploy Supabase Functions
+        uses: supabase/supabase-github-action@v1
+        with:
+          supabase-url: ${{ secrets.SUPABASE_URL }}
+          supabase-key: ${{ secrets.SUPABASE_KEY }}
+      
+      - name: Deploy Edge Functions
+        run: npx supabase functions deploy --no-verify-jwt
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}

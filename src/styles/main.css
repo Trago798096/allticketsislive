@@ -1,0 +1,77 @@
+
+/* Import mobile-specific styles */
+@import './mobile.css';
+
+/* Form accessibility improvements */
+form {
+  width: 100%;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: medium;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 1rem;
+}
+
+/* Add proper id, name, and autoComplete attributes to form elements */
+input[type="email"]:not([id]):not([name]) {
+  id: "userEmail";
+  name: "user_email";
+  autoComplete: "email";
+}
+
+input[type="text"]:not([id]):not([name]) {
+  id: "userName";
+  name: "user_name";
+  autoComplete: "name";
+}
+
+input[type="tel"]:not([id]):not([name]) {
+  id: "userPhone";
+  name: "user_phone";
+  autoComplete: "tel";
+}
+
+/* Fix Lighthouse accessibility issues */
+a:not([aria-label]) img:not([alt]) {
+  aria-label: "Image link";
+}
+
+button:not([aria-label]):not([aria-labelledby]) {
+  aria-label: "Button";
+}
+
+/* Better error messages */
+.error-message {
+  color: #e53e3e;
+  margin-top: -0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+/* Improve loading states */
+.loading-spinner {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

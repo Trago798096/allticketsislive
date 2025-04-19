@@ -1,0 +1,324 @@
+
+/* Mobile-specific styles */
+@media (max-width: 640px) {
+  .seat { 
+    width: 20px !important;
+    height: 20px !important; 
+    touch-action: manipulation;
+    margin: 2px !important;
+  }
+  
+  .seat-row {
+    margin-bottom: 4px !important;
+  }
+  
+  .stadium-layout {
+    max-width: 100% !important;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .booking-form-container {
+    padding: 1rem !important;
+  }
+  
+  .form-control {
+    font-size: 16px !important; /* Prevent iOS zoom on input focus */
+  }
+  
+  /* Improve tap targets */
+  button, 
+  a, 
+  .clickable, 
+  input[type="checkbox"], 
+  input[type="radio"] {
+    min-height: 38px;
+    min-width: 38px;
+  }
+  
+  /* Table improvements for mobile */
+  .responsive-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Admin panel fixes for mobile */
+  .admin-layout-container {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .admin-sidebar {
+    display: none;
+  }
+  
+  .admin-content {
+    padding: 0.75rem !important;
+  }
+  
+  /* Form fields on mobile */
+  .form-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Dialog/modal fixes */
+  .dialog-content, 
+  .modal-content {
+    width: 95% !important;
+    max-height: 85vh !important;
+    margin: 0 auto !important;
+    padding: 0.75rem !important;
+  }
+
+  /* Admin tables on mobile */
+  .admin-table th,
+  .admin-table td {
+    padding: 0.5rem !important;
+  }
+
+  /* Admin panel action buttons on mobile */
+  .action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  
+  /* Prevent double-tap zoom */
+  * {
+    touch-action: manipulation;
+  }
+
+  /* Fix button grid on mobile */
+  .button-grid {
+    grid-template-columns: 1fr !important;
+    width: 100%;
+  }
+
+  /* Fix text overflow */
+  p, h1, h2, h3, h4, h5, h6, span {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  /* Fixed height on mobile dropdowns */
+  .select-content {
+    max-height: 300px !important;
+  }
+
+  /* Make forms more mobile-friendly */
+  .mobile-form-label {
+    text-align: left !important;
+  }
+
+  .mobile-full-width {
+    width: 100% !important;
+  }
+  
+  /* Payment methods and UPI icons */
+  .payment-methods {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .payment-method-icon {
+    max-width: 80px;
+    height: auto;
+  }
+  
+  .payment-icons-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .payment-icon-item {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+  }
+  
+  /* Admin panel components */
+  .admin-card {
+    padding: 0.75rem !important;
+  }
+  
+  .admin-form-grid {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem;
+  }
+  
+  /* Form labels and controls */
+  .form-label {
+    margin-bottom: 0.25rem;
+    display: block;
+  }
+  
+  .form-input {
+    width: 100%;
+  }
+}
+
+/* Make scrolling smooth on all devices */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optimize form elements for mobile */
+input, select, textarea {
+  font-size: 16px !important; /* Prevent iOS zoom on input focus */
+}
+
+/* Fix for iOS input shadow issues */
+input, textarea {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+/* Fix for iOS Safari 100vh issue */
+.full-height {
+  height: 100vh;
+  height: -webkit-fill-available;
+}
+
+/* Improve form accessibility */
+input:focus, select:focus, textarea:focus, button:focus {
+  outline: 2px solid #4c9aff;
+  outline-offset: 2px;
+}
+
+/* Responsive tables */
+.table-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+
+/* Responsive buttons */
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Responsive grid layouts */
+@media (max-width: 768px) {
+  .grid-cols-2, 
+  .grid-cols-3, 
+  .grid-cols-4 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .md\:flex-row {
+    flex-direction: column !important;
+  }
+  
+  .px-6 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  .py-8 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  /* Fix admin tables on tablet */
+  .responsive-admin-table {
+    font-size: 0.875rem !important;
+  }
+
+  /* Make sure forms are not too wide */
+  .form-container {
+    max-width: 100% !important;
+    padding: 1rem !important;
+  }
+
+  /* Improve form field spacing */
+  .form-field {
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* Card responsiveness */
+@media (max-width: 640px) {
+  .card-content {
+    padding: 1rem !important;
+  }
+  
+  .card-header {
+    padding: 1rem 1rem 0 1rem !important;
+  }
+  
+  .card-footer {
+    padding: 0 1rem 1rem 1rem !important;
+  }
+
+  /* Fix admin table headers and rows */
+  .table-header-cell {
+    white-space: nowrap;
+    font-size: 0.75rem;
+  }
+
+  .table-cell {
+    padding: 0.5rem 0.25rem !important;
+  }
+}
+
+/* UPI payment icons specific fixes */
+.upi-payment-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.upi-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  padding: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.upi-icon:hover {
+  transform: translateY(-2px);
+}
+
+.upi-icon img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* UPI icons fallback */
+.upi-icon-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: #333;
+  font-size: 10px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* UPI icon labels */
+.upi-icon-label {
+  font-size: 10px;
+  margin-top: 4px;
+  text-align: center;
+  color: #666;
+}
